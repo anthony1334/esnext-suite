@@ -2,7 +2,7 @@
 
 
 
-let request = require("request-promise-native");
+const request = require("request-promise-native");
 
 function getParkingId(id)
 {
@@ -25,11 +25,32 @@ function getParkingId(id)
     });
 }
 
-function getParkingIdPromise(id)
+/**
+ * structure de la classe Service
+ */
+class getParkingIdService{
+    getReservationsParkingIdPromise(id)
 {
-    return request('http://localhost:8090/parkings/'+id);
-};
+    // la méthode retourne un objet promesse
+    return request(`http://localhost:8090/parkings/${id}/reservations`);
+        
+}
 
+}
+
+class  getReservationsParkingIdService{
+    getReservationsParkingIdPromise(id)
+{
+    // la méthode retourne un objet promesse
+    return request(`http://localhost:8090/parkings/${id}/reservations`);
+        
+}
+}
+
+/**
+ * 
+ *methode qui retourne une promesse de reservation pour un parking donné
+ */
 function getReservationsParkingId(id)
 {
     // la méthode retourne un objet promesse
