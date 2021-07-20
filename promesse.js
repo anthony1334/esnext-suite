@@ -25,7 +25,7 @@ function getParkingId(id)
     });
 }
 
-function getParkingId1(id)
+function getParkingIdPromise(id)
 {
     return request('http://localhost:8090/parkings/'+id);
 };
@@ -51,7 +51,14 @@ function getReservationsParkingId(id)
     });
 }
 
-getParkingId1(1).then(
+function getReservationsParkingIdPromise(id)
+{
+    // la méthode retourne un objet promesse
+    return request(`http://localhost:8090/parkings/${id}/reservations`);
+        
+}
+
+getParkingIdPromise(1).then(
     (data) => {
         console.log(data)
 
