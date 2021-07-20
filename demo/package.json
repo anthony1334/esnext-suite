@@ -1,0 +1,11 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "Démonstration de code en ES6 objet",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "CGE",
+  "license": "ISC"
+}
